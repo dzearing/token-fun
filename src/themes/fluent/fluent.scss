@@ -1,0 +1,147 @@
+@import './font-weights';
+@import './font-sizes';
+@import './spacing';
+
+.fluent {
+   @extend .font-body;
+   @include ms-font-weights;
+   @include ms-font-sizes;
+   @include ms-spacing;
+
+  /* Component specific overrides (applies to all variants in all theme modes) */
+  --ms-button-height: 32px;
+  --ms-button-font-size: var(--ms-font-size-med);
+  --ms-button-font-weight: var(--ms-font-weight-bold);
+  --ms-checkbox-icon-size: 12px;
+  --ms-button-border-radius: 3px;
+}
+
+/* base plate light */
+.fluent.light {
+  --ms-background: #fff;
+  --ms-text: #000;
+  --ms-background-disabled: rgb(243, 242, 241);
+  --ms-text-disabled: rgb(161, 159, 157);
+  /* Focus rectangles. */
+  --ms-focus: black; // rgb(0, 120, 212);
+  --ms-focusInner: #fff;
+}
+
+/* base plate dark */
+.fluent.dark {
+  --ms-border: rgb(141, 140, 139);
+  --ms-background: rgb(45, 44, 44);
+  --ms-text: #fff;
+  --ms-background-disabled: rgb(59, 58, 57);
+  --ms-text-disabled: rgb(96, 94, 92);
+  --ms-focus: #fff;
+  --ms-focusInner: #000;
+}
+
+/* base plate hc */
+.fluent.hc {
+  --ms-border: rgb(230, 230, 230);
+  --ms-background: #000;
+  --ms-text: #fff;
+  --ms-background-disabled: rgb(63, 242, 63);
+  --ms-text-disabled: #000;
+  --ms-focus: #fff;
+  --ms-focusInner: #000;
+}
+
+.font-body {
+  --ms-font-family: "Segoe UI Web (West European)", "Segoe UI", -apple-system,
+  BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  --ms-font-weight: 300;
+  --ms-font-size: 14px;
+}
+
+.font-body-strong {
+@extend .font-body;
+--ms-font-weight: 600;
+}
+.fluent .accent-fill {
+  --ms-background: rgb(0, 120, 212);
+  --ms-text: white;
+  --ms-border: transparent;
+  --ms-background-hover: rgb(16, 110, 190);
+  --ms-background-pressed: rgb(0, 90, 158);
+  --ms-focus: #000;
+  --ms-icon: red;
+}
+
+.fluent.dark .accent-fill,
+.fluent.hc .accent-fill {
+  --ms-focus: #fff;
+}
+
+.fluent .neutral-fill {
+  --ms-background: rgb(235, 235, 235);
+  --ms-text: rgb(50, 49, 48);
+  --ms-border: transparent;
+  --ms-background-hover: rgb(243, 242, 241);
+  --ms-text-hover: rgb(32, 31, 30);
+  --ms-background-pressed: rgb(237, 235, 233);
+}
+
+.fluent.dark .neutral-fill {
+  --ms-border-width: 1px;
+  --ms-border: transparent;
+  --ms-background: rgb(155, 155, 155);
+  --ms-background-hover: #555;
+  --ms-background-pressed: #666;
+}
+
+.fluent.ghost-fill {
+  --ms-text: rgb(50, 49, 48);
+  --ms-border: inherit;
+  --ms-background: inherit;
+  --ms-background-hover: rgb(243, 242, 241);
+  --ms-text-hover: rgb(32, 31, 30);
+  --ms-background-pressed: rgb(237, 235, 233);
+}
+
+.fluent .danger-fill {
+  --ms-background: red;
+  --ms-text: white;
+  --ms-text-hover: var(--ms-text);
+  --ms-text-pressed: var(--ms-text-hover);
+  --ms-subText: #eee;
+  --ms-disabledText: grey;
+  --ms-border: transparent;
+  --ms-background-hover: pink;
+  --ms-background-pressed: rgb(0, 90, 158);
+  --ms-focus: green;
+}
+
+.fluent.button-text {
+  --ms-size: 14px;
+  --ms-weight: bold;
+  --ms-line-height: 14px;
+}
+
+.fluent .disabled-fill {
+  --ms-border: transparent;
+  --ms-background: rgb(235, 235, 235);
+  --ms-text: rgb(180, 180, 180);
+}
+
+.fluent.dark .disabled-fill {
+  --ms-background: rgb(83, 83, 83);
+  --ms-text: rgb(143, 143, 143);
+}
+
+.fluent.hc .disabled-fill {
+  --ms-background: rgb(65, 65, 65);
+  --ms-text: rgb(143, 143, 143);
+  --ms-text-disabled: rgb(112, 112, 112);
+}
+
+.fluent .funky-fill {
+  --ms-border-width: 1px;
+  --ms-border: rgb(138, 136, 134);
+  --ms-background: rgb(226, 29, 248);
+  --ms-text: white;
+  --ms-background-hover: #555;
+  --ms-background-pressed: #666;
+}

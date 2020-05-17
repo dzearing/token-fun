@@ -1,0 +1,37 @@
+.root {
+  position: relative;
+}
+
+.input {
+  box-sizing: border-box;
+  height: 32px;
+  min-width: 300px;
+  padding: 0 8px;
+  border-style: solid;
+  border-radius: var(--ms-border-radius, 2px);
+  border-width: 1px;
+  box-sizing:border-box;
+  box-shadow: var(--ms-shadow);
+  background: var(--ms-background);
+  border-color: var(--ms-border);
+  color: var(--ms-text);
+  font-family: var(--ms-font-family);
+  font-size: var(--ms-font-size-med);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.root:focus-within::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  border: 2px solid var(--ms-focus);
+  border-bottom-color: var(--ms-focus-bottom, var(--ms-focus));
+  box-shadow: 0 0 0 1px var(--ms-focusInner) inset;
+  border-radius: 2px;
+}

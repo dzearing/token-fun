@@ -1,0 +1,143 @@
+.github {
+  /* General fonts */
+  --ms-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+
+  /* Weights */
+  --ms-font-weight-light: 300;
+  --ms-font-weight-normal: 400;
+  --ms-font-weight-bold: 600;
+
+  /* Size ramp (questionable, remove?) */
+  --ms-font-size-sm2: 10px;
+  --ms-font-size-sm1: 12px;
+  --ms-font-size-med: 14px;
+  --ms-font-size-lg1: 16px;
+  --ms-font-size-lg2: 20px;
+  --ms-font-size-lg3: 24px;
+  --ms-font-size-lg4: 32px;
+  --ms-font-size-lg5: 48px;
+  --ms-font-size-lg6: 64px;
+
+  /* Space */
+  --ms-space-sm3: 2px;
+  --ms-space-sm2: 4px;
+  --ms-space-sm1: 6px;
+  --ms-space-med: 8px;
+  --ms-space-lg1: 16px;
+  --ms-space-lg2: 20px;
+  --ms-space-lg3: 24px;
+  --ms-space-lg4: 32px;
+  --ms-space-lg5: 48px;
+  --ms-space-lg6: 64px;
+  --ms-space-lg7: 128px;
+
+  --ms-button-font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --ms-button-font-size: 12px;
+  --ms-button-font-weight: 600;
+  --ms-button-height: 26px;
+  --ms-button-border-radius: 2px;
+  --ms-button-padding: 3px 10px;
+
+  --ms-background-disabled: rgb(243, 242, 241);
+  --ms-text-disabled: rgb(161, 159, 157);
+  --ms-button-shadow-disabled: none;
+  --ms-border-disabled: transparent;
+}
+
+.github.light {
+  --ms-background: #fff;
+  --ms-text: #000;
+  --ms-background-disabled: rgb(243, 242, 241);
+  --ms-text-disabled: rgb(161, 159, 157);
+}
+
+.github.dark {
+  --ms-background: rgb(45, 44, 44);
+  --ms-text: #fff;
+  --ms-background-disabled: rgb(59, 58, 57);
+  --ms-text-disabled: rgb(96, 94, 92);
+}
+
+.github.hc {
+  --ms-background: #000;
+  --ms-text: #fff;
+  --ms-background-disabled: rgb(63, 242, 63);
+  --ms-text-disabled: #000;
+}
+
+.github .neutral-fill {
+  --ms-background: #eff3f6;
+  --ms-background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  --ms-text: rgb(50, 49, 48);
+  --ms-border-width: 1px;
+  --ms-border: rgba(27, 31, 35, 0.2);
+  --ms-background-hover: rgb(243, 242, 241);
+  --ms-text-hover: rgb(32, 31, 30);
+  --ms-border-hover: var(--ms-border);
+  --ms-background-pressed: rgb(0, 90, 158);
+  --ms-text-pressed: var(--ms-text);
+  --ms-border-pressed: var(--ms-border);
+}
+
+.github.dark .neutral-fill {
+  --ms-background: transparent;
+  --ms-background-image: none;
+  --ms-text: #fff;
+  --ms-border-width: 1px;
+  --ms-border: #666;
+  --ms-background-hover: #333;
+  --ms-text-hover: #fff;
+  --ms-border-hover: var(--ms-border);
+  --ms-background-pressed: #444;
+  --ms-text-pressed: var(--ms-text);
+  --ms-border-pressed: var(--ms-border);
+}
+
+.github .accent-fill {
+  --ms-background: #28a745;
+  --ms-background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
+  --ms-text: #fff;
+  --ms-border-width: 1px;
+  --ms-border: rgba(27, 31, 35, 0.2);
+  --ms-background-hover: rgb(243, 242, 241);
+  --ms-text-hover: var(--ms-text);
+  --ms-border-hover: var(--ms-border);
+  --ms-background-pressed: rgb(0, 90, 158);
+}
+
+.github .input-fill {
+  --ms-background: #fafbfc;
+  --ms-text: #24292e;
+  --ms-border: rgb(209, 213, 218);
+  --ms-border-radius: 3px;
+  --ms-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+}
+
+.github.dark .input-fill {
+  --ms-background: #363636;
+  --ms-text: #e4e4e4;
+  --ms-border: rgb(209, 213, 218);
+  --ms-border-radius: 3px;
+  --ms-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+}
+
+.github .disabled-fill {
+  --ms-border: transparent;
+  --ms-shadow: none;
+  --ms-background: rgb(235, 235, 235);
+  --ms-background-image: none;
+  --ms-text: rgb(180, 180, 180);
+}
+
+.github.dark .disabled-fill {
+  --ms-background: rgb(83, 83, 83);
+  --ms-text: rgb(143, 143, 143);
+}
+
+.github.hc .disabled-fill {
+  --ms-background: rgb(65, 65, 65);
+  --ms-text: rgb(143, 143, 143);
+  --ms-text-disabled: rgb(112, 112, 112);
+}

@@ -1,0 +1,10 @@
+.SampleCard {
+  display: inline-flex;
+  flex-direction: column;
+  margin: var(--ms-space-med);
+  align-items: flex-start;
+}
+
+.SampleCard > *:not(:first-child) {
+  margin-top: var(--ms-space-med);
+}

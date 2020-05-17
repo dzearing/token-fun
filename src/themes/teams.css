@@ -1,0 +1,132 @@
+.teams {
+  /* General fonts */
+  --ms-font-family: "Segoe UI Web (West European)", "Segoe UI", -apple-system,
+    BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+
+  /* Weights */
+  --ms-font-weight-light: 300;
+  --ms-font-weight-normal: 400;
+  --ms-font-weight-bold: 600;
+
+  /* Sizes */
+  --ms-font-size-sm2: 10px;
+  --ms-font-size-sm1: 12px;
+  --ms-font-size-med: 14px;
+  --ms-font-size-lg1: 16px;
+  --ms-font-size-lg2: 20px;
+  --ms-font-size-lg3: 24px;
+  --ms-font-size-lg4: 32px;
+  --ms-font-size-lg5: 48px;
+  --ms-font-size-lg6: 64px;
+
+  /* Space */
+  --ms-space-sm3: 2px;
+  --ms-space-sm2: 4px;
+  --ms-space-sm1: 6px;
+  --ms-space-med: 8px;
+  --ms-space-lg1: 16px;
+  --ms-space-lg2: 20px;
+  --ms-space-lg3: 24px;
+  --ms-space-lg4: 32px;
+  --ms-space-lg5: 48px;
+  --ms-space-lg6: 64px;
+  --ms-space-lg6: 128px;
+
+  /* Component specifics */
+  --ms-button-height: 32px;
+  --ms-button-font-family: var(--ms-font-family);
+  --ms-button-font-size: var(--ms-font-size-med);
+  --ms-button-font-weight: var(--ms-font-weight-bold);
+  --ms-button-shadow: rgba(0, 0, 0, 0.1) 0px 0.2rem 0.4rem -0.075rem;
+  --ms-button-border-radius: 2px;
+  --ms-button-transform-pressed: scale(0.96);
+  --ms-button-transition-pressed: transform 100ms linear;
+
+  --ms-checkbox-size: 16px;
+  --ms-checkbox-icon-size: 10px;
+  --ms-checkbox-focus-offset: 0px;
+
+  --ms-background-disabled: rgb(243, 242, 241);
+  --ms-text-disabled: rgb(161, 159, 157);
+  --ms-button-shadow-disabled: none;
+  --ms-focus: black;
+  --ms-focusInner: white;
+}
+
+.teams.light {
+  --ms-background: #fff;
+  --ms-text: #000;
+  --ms-background-disabled: rgb(243, 242, 241);
+  --ms-text-disabled: rgb(161, 159, 157);
+}
+
+.teams.dark {
+  --ms-background: rgb(45, 44, 44);
+  --ms-text: #fff;
+  --ms-background-disabled: rgb(59, 58, 57);
+  --ms-text-disabled: rgb(96, 94, 92);
+  --ms-focus: #fff;
+  --ms-focusInner: #000;
+}
+
+.teams.hc {
+  --ms-background: #000;
+  --ms-text: #fff;
+  --ms-background-disabled: rgb(63, 242, 63);
+  --ms-text-disabled: #000;
+}
+
+.teams .accent-fill {
+  --ms-background: rgb(98, 100, 167);
+  --ms-text: white;
+  --ms-divider-background: white;
+  --ms-border-width: 1px;
+  --ms-border: transparent;
+  --ms-border-radius: 4px;
+  --ms-focus: black;
+  --ms-focusInner: white;
+  --ms-background-hover: rgb(88, 90, 150);
+}
+
+.teams.light .neutral-fill {
+  --ms-background: #fff;
+  --ms-background-hover: rgb(237, 235, 233);
+  --ms-background-pressed: rgb(225, 223, 221);
+  --ms-text: rgb(37, 36, 35);
+  --ms-border: rgb(225, 223, 221);
+  --ms-border-hover: rgb(200, 198, 196);
+  --ms-text-hover: rgb(32, 31, 30);
+}
+
+.teams.dark .neutral-fill {
+  --ms-border-width: 1px;
+  --ms-border: rgb(138, 136, 134);
+  --ms-background-hover: #555;
+  --ms-background-pressed: #666;
+}
+
+.teams .input-fill {
+  --ms-background: rgb(243, 242, 241);
+  --ms-border: transparent;
+  --ms-focus: transparent;
+  --ms-focusInner: transparent;
+  --ms-focus-bottom: rgb(98, 100, 167);
+  --ms-text: rgb(37, 36, 35);
+}
+
+.teams .disabled-fill {
+  --ms-border: transparent;
+  --ms-background: rgb(235, 235, 235);
+  --ms-text: rgb(180, 180, 180);
+}
+
+.teams.dark .disabled-fill {
+  --ms-background: rgb(83, 83, 83);
+  --ms-text: rgb(143, 143, 143);
+}
+
+.teams.hc .disabled-fill {
+  --ms-background: rgb(65, 65, 65);
+  --ms-text: rgb(143, 143, 143);
+  --ms-text-disabled: rgb(112, 112, 112);
+}

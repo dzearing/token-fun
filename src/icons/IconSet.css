@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "ms-IconSet";
+  src: url("https://spoprod-a.akamaihd.net/files/fabric/assets/icons/fabric-icons-a13498cf.woff")
+    format("woff");
+}
+
+.ms-IconSet {
+  font-family: ms-IconSet;
+  font-size: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+}

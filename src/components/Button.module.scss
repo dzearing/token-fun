@@ -1,0 +1,87 @@
+/* A component uses tokens. */
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  outline: none;
+  user-select: none;
+  white-space: nowrap;
+
+  font-family: var(--ms-button-font-family, var(--ms-font-family));
+  font-size: var(--ms-button-font-size, var(--ms-font-size));
+  font-weight: var(--ms-button-font-weight, var(--ms-font-weight));
+
+  border-radius: var(--ms-button-border-radius);
+  padding: var(--ms-button-padding, 0 var(--ms-space-lg1));
+
+  box-shadow: var(--ms-button-shadow);
+
+  background-color: var(--ms-background);
+  background-image: var(--ms-background-image);
+  color: var(--ms-text);
+
+  border-style: solid;
+  border-width: var(--ms-border-width, 1px);
+  border-color: var(--ms-border);
+  height: var(--ms-button-height);
+}
+
+.iconOnly {
+  width: var(--ms-button-height);
+  padding: 0;
+}
+
+.root > *:not(:first-child) {
+  margin-left: var(--ms-button-gap, var(--ms-space-med));
+}
+
+.root:hover {
+  background-color: var(--ms-background-hover, var(--ms-background));
+  color: var(--ms-text-hover, var(--ms-text));
+  border-color: var(--ms-border-hover, var(--ms-border));
+  box-shadow: var(--ms-button-shadow-hover, var(--ms-button-shadow));
+}
+
+.root:active {
+  background-color: var(--ms-background-pressed, var(--ms-background-hover));
+  color: var(--ms-text-pressed, var(--ms-text-hover, var(--ms-text)));
+  border-color: var(
+    --ms-border-pressed,
+    var(--ms-border-hover, var(--ms-border))
+  );
+  transform: var(--ms-button-transform-pressed);
+  transition: var(--ms-button-transition-pressed);
+  box-shadow: var(
+    --ms-button-shadow-pressed,
+    var(--ms-button-shadow-hover, var(--ms-button-shadow))
+  );
+}
+
+.icon {
+  color: var(--ms-icon);
+}
+
+.root:focus::after {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  content: '';
+  box-sizing: border-box;
+  border-radius: var(--ms-button-border-radius);
+  box-shadow: 0 0 0 1px var(--ms-focusInner) inset;
+  border: 2px solid var(--ms-focus);
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.circular {
+  border-radius: 10000px;
+  --ms-button-border-radius: 50000px;
+  width: var(--ms-button-height);
+  padding: 0;
+}

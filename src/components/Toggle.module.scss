@@ -1,0 +1,64 @@
+
+.root {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.root > *:not(:first-child) {
+  margin-left: 8px;
+}
+
+.pill {
+  flex-shrink: 0;
+  transition: all ease-out .12s;
+  position: relative;
+  user-select: none;
+  margin: 0;
+  padding: 0 2px;
+  background: var(--ms-background);
+  display: inline-block;
+  width: 35px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--ms-border);
+  border-radius: 2000px;
+}
+
+.thumb {
+  transition: all ease-out .12s;
+  display: block;
+  width: 13px;
+  height: 13px;
+  background: var(--ms-toggle-thumb, var(--ms-text));
+  border-radius: 20000px;
+  box-sizing: border-box;
+  border: 1px solid  transparent;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.checked .thumb {
+  transform: translate(20px, -50%);
+}
+
+.root:focus .pill::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 2px solid var(--ms-focus);
+  box-shadow: 0 0 0 1px var(--ms-focusInner) inset;
+  border-radius: 30000px;
+}
+
+.disabled {
+  pointer-events: none;
+  color: var(--ms-text-disabled);
+}

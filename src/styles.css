@@ -1,0 +1,28 @@
+.App {
+  box-sizing: border-box;
+  font-family: var(--ms-font-family);
+  font-size: var(--ms-font-size);
+  font-weight: var(--ms-font-weight-normal);
+  background-color: var(--ms-background);
+  color: var(--ms-color);
+
+  --ms-font-size-body: var(--ms-font-size-med);
+  --ms-font-size-button: var(--ms-font-size-med);
+  --ms-font-family-button: var(--ms-font-family);
+  --ms-font-weight-button: var(--ms-font-weight-bold);
+}
+.App h1,
+.App h2,
+.App h3,
+.App h4,
+.App h5,
+.App h6,
+.App h7,
+.App p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
