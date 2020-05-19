@@ -471,7 +471,6 @@
             ":" +
             value +
             "}\n";
-          console.log(css);
         }
       }
     }
