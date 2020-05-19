@@ -30,20 +30,17 @@ body {
 .App p {
   margin: 0;
 }
-.App,
-.App * {
-  transition: all 0.2s ease-out;
-}
+
 /* .App *:focus {
   outline: 2px solid var(--ms-focus);
 } */
 
-.Box,
-.App {
+.Box {
   box-sizing: border-box;
   font-family: var(--ms-font-family);
   font-size: var(--ms-body-font-size, var(--ms-font-size));
   font-weight: var(--ms-font-weight-normal);
   background-color: var(--ms-background);
   color: var(--ms-text);
+  min-height: 100vh;
 }

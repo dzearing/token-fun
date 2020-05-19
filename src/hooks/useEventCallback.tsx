@@ -1,10 +1,6 @@
 import * as React from "react";
 
-export const useEventCallback = (
-  userCallback?: any,
-  callback?: any,
-  dependencies: any[] = []
-) => {
+export const useEventCallback = (userCallback?: any, callback?: any) => {
   return React.useCallback(
     (ev: React.FormEvent) => {
       if (userCallback) {
@@ -19,6 +15,6 @@ export const useEventCallback = (
       ev.preventDefault();
       ev.stopPropagation();
     },
-    [userCallback, ...dependencies]
+    [userCallback, callback]
   );
 };

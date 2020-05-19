@@ -27,7 +27,7 @@
   height: var(--ms-button-height);
 }
 
-.iconOnly {
+.root.root.iconOnly {
   width: var(--ms-button-height);
   padding: 0;
 }
@@ -41,6 +41,12 @@
   color: var(--ms-text-hover, var(--ms-text));
   border-color: var(--ms-border-hover, var(--ms-border));
   box-shadow: var(--ms-button-shadow-hover, var(--ms-button-shadow));
+}
+
+.root:active * {
+  position: relative;
+  left: 0px;
+  top: 0px;
 }
 
 .root:active {
@@ -68,18 +74,18 @@
   top: -1px;
   right: -1px;
   bottom: -1px;
-  content: '';
+  content: "";
   box-sizing: border-box;
   border-radius: var(--ms-button-border-radius);
-  box-shadow: 0 0 0 1px var(--ms-focusInner) inset;
-  border: 2px solid var(--ms-focus);
+  box-shadow: 0 0 0 1px var(--ms-focusInner, white) inset;
+  border: 2px solid var(--ms-focus, black);
 }
 
 .disabled {
   pointer-events: none;
 }
 
-.circular {
+.root.root.circular {
   border-radius: 10000px;
   --ms-button-border-radius: 50000px;
   width: var(--ms-button-height);

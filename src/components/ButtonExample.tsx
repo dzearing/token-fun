@@ -1,14 +1,10 @@
 import * as React from "react";
 import { Button } from "./Button";
-import { UploadIcon, ChevronDownIcon, CircleRingIcon } from "../icons/index";
+import { UploadIcon, ChevronDownIcon, CircleRingIcon } from "../icons/IconSet";
 
 export const ButtonExampleSection = (props: any) => (
   <div className="SampleCard">
-    <div>
-      {Object.keys(props)
-        .join(" ")
-        .toString() || "(default)"}
-    </div>
+    <div>{Object.keys(props).join(" ").toString() || "(default)"}</div>
     <Button iconOnly {...props}>
       <UploadIcon />
     </Button>
@@ -39,7 +35,7 @@ const exampleSets = [{ primary: true }, { secondary: true }];
 
 export const ButtonExample = () => (
   <>
-    {exampleSets.map(set => (
+    {exampleSets.map((set) => (
       <ButtonExampleSection {...set} />
     ))}
   </>

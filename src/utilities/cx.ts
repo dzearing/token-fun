@@ -5,7 +5,8 @@ export const cx = (
   variants: (
     | string
     | { [key: string]: string }
-    | ((arg: any) => string | { [key: string]: string }))[]
+    | ((arg: any) => string | { [key: string]: string })
+  )[]
 ) => {
   const classList = [className];
   let defaultClass;
@@ -21,11 +22,11 @@ export const cx = (
       let value = variant[name];
       if (name === "default") {
         defaultClass = value;
-      } else if (props[name]) {
+      } else if ((props as any)[name]) {
         classList.push(value);
 
-        if (classes[name]) {
-          classList.push(classes[name]);
+        if ((classes as any)[name]) {
+          classList.push((classes as any)[name]);
         }
       }
     } else {
@@ -37,8 +38,8 @@ export const cx = (
     classList.push(defaultClass);
   }
 
-  if (props.className) {
-    classList.push(props.className);
+  if ((props as any).className) {
+    classList.push((props as any).className);
   }
 
   return classList.join(" ");

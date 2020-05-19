@@ -17,10 +17,8 @@ export interface IInputProps extends React.AllHTMLAttributes<any> {
 export const useInput = (props: IInputProps): IInputProps => {
   const { disabled, onChange, defaultValue, ...rest } = props;
   const [value, setValue] = useControlled(props, "value");
-  const onInputChange = useEventCallback(
-    onChange,
-    (ev: React.FormEvent) => setValue((ev.target as any).value),
-    [onChange, value, setValue]
+  const onInputChange = useEventCallback(onChange, (ev: React.FormEvent) =>
+    setValue((ev.target as any).value)
   );
 
   return {
@@ -29,8 +27,8 @@ export const useInput = (props: IInputProps): IInputProps => {
     value,
     ...(disabled && {
       disabled: true,
-      "aria-disabled": true
-    })
+      "aria-disabled": true,
+    }),
   };
 };
 
@@ -55,14 +53,14 @@ export const InputBase = (props: IInputProps) => {
 const InputVariants = [
   "input-fill",
   { disabled: "disabled-fill" },
-  { error: "error-fill" }
+  { error: "error-fill" },
 ];
 
 export const Input = (props: IInputProps) =>
   InputBase({
     ...props,
     variants: InputVariants,
-    classes: defaultClasses
+    classes: defaultClasses,
   });
 
 export const InputExample = () => (

@@ -11,7 +11,6 @@ import "./SampleCard.css";
 
 import { TextExample } from "./components/TextExample";
 import { ButtonExample } from "./components/ButtonExample";
-import { ToolbarExample } from "./components/Toolbar";
 import { ToggleExample } from "./components/Toggle";
 import { CheckboxExample } from "./components/Checkbox";
 import { InputExample } from "./components/Input";
@@ -21,26 +20,27 @@ export default function App() {
   const [themeSet, setThemeSet] = React.useState("light");
 
   return (
-    <div className={`App fontBody ${theme} ${themeSet}`}>
-      <div>
-        <select onChange={ev => setTheme(ev.target.value)}>
+    <div className={`fontBody App ${theme} ${themeSet}`}>
+      <div className="Box">
+        <select onChange={(ev) => setTheme(ev.target.value)}>
           <option value="fluent">Fluent</option>
           <option value="teams">Teams</option>
           <option value="github">Github</option>
           <option value="linkedin">LinkedIn</option>
           <option value="costco">Costco</option>
         </select>
-        <select onChange={ev => setThemeSet(ev.target.value)}>
+        <select onChange={(ev) => setThemeSet(ev.target.value)}>
           <option value="light">Light</option>
           <option value="dark">Dark</option>
           <option value="hc">High contrast</option>
         </select>
+
+        <CheckboxExample />
+        <ToggleExample />
+        <InputExample />
+        <ButtonExample />
+        <TextExample />
       </div>
-      <CheckboxExample />
-      <ToggleExample />
-      <InputExample />
-      <ButtonExample />
-      <TextExample />
     </div>
   );
 }

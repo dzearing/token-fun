@@ -1,32 +1,15 @@
 import * as React from "react";
 import classes from "./Toolbar.module.scss";
-import { Button } from "./Button";
+import { MoreIcon } from "../icons/IconSet";
 import {
   ItalicIcon,
   BoldIcon,
   CutIcon,
   CopyIcon,
-  PasteIcon,
   UnderlineIcon,
-  MoreIcon
-} from "../icons/index";
-
-/**
- * Goals:
- *
- * Render buttons with a particular look
- * Don't remake the button
- * Reuse as much as possible
- */
-export const ToolbarButton = props => {
-  // gross
-  return Button({
-    ...props,
-    iconOnly: true,
-    style: { "--ms-button-height": "40px" },
-    children: props.icon
-  });
-};
+} from "../icons/IconSet2";
+import { PasteIcon } from "../icons/IconSet1";
+import { ToolbarButton } from "./ToolbarButton";
 
 export const Toolbar = (props: any) => {
   const { className, children } = props;

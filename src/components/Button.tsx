@@ -13,6 +13,8 @@ export interface IButtonProps extends React.ButtonHTMLAttributes<any> {
   classes?: any;
   danger?: boolean;
   variants?: any;
+
+  icon?: any;
 }
 
 const ButtonVariants = [
@@ -23,7 +25,7 @@ const ButtonVariants = [
   { checked: "accent-strong-fill" },
   { iconOnly: "iconOnly" },
   { loading: "loading" },
-  { circular: "circular" }
+  { circular: "circular" },
 ];
 
 export const useButton = (props: IButtonProps) => {
@@ -36,6 +38,7 @@ export const useButton = (props: IButtonProps) => {
     loading,
     circular,
     classes,
+    variants,
     ...rest
   } = props;
 
@@ -43,12 +46,12 @@ export const useButton = (props: IButtonProps) => {
     ...rest,
     ...(!disabled && {
       tabIndex: 0,
-      role: "button"
+      role: "button",
     }),
     ...(disabled && {
       disabled: true,
-      "aria-disabled": true
-    })
+      "aria-disabled": true,
+    }),
   };
 };
 
@@ -65,7 +68,7 @@ export const ButtonBase = (props: IButtonProps) => {
   );
 };
 
-export const Button = props =>
+export const Button = (props: IButtonProps) =>
   ButtonBase({ ...props, classes, variants: ButtonVariants });
 
 export type IFunkyButtonProps = IButtonProps & { funky?: boolean };
@@ -74,5 +77,5 @@ export const FunkyButton = (props: IFunkyButtonProps) =>
   ButtonBase({
     ...props,
     classes,
-    variants: [...ButtonVariants, { funky: "funky-fill" }]
+    variants: [...ButtonVariants, { funky: "funky-fill" }],
   });

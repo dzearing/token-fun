@@ -1,7 +1,8 @@
 import * as React from "react";
 import { AddIcon } from "../icons/IconSet";
 import classes from "./Menu.module.scss";
-import { Toolbar, ToolbarButton } from "./Toolbar";
+import { Toolbar } from "./Toolbar";
+import { ToolbarButton } from "./ToolbarButton";
 
 const MenuItem = (props: any) => <div {...props} className={classes.root} />;
 const Menu = (props: any) => <div {...props} className={classes.root} />;

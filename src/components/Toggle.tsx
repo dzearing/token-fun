@@ -13,13 +13,14 @@ export interface IToggleProps extends React.AllHTMLAttributes<any> {
   label?: string;
 }
 
-export const useToggle = (props: IToggleProps): IToggleProps => {
+export interface IToggleState extends IToggleProps {
+  setChecked: (checked: boolean) => void;
+}
+
+export const useToggle = (props: IToggleProps): IToggleState => {
   const { disabled, onClick, ...rest } = props;
   const [checked, setChecked] = useControlled(props, "checked");
-  const onToggleClick = useEventCallback(onClick, () => setChecked(!checked), [
-    checked,
-    setChecked
-  ]);
+  const onToggleClick = useEventCallback(onClick, () => setChecked(!checked));
 
   return {
     ...rest,
@@ -28,12 +29,12 @@ export const useToggle = (props: IToggleProps): IToggleProps => {
     onClick: onToggleClick,
     ...(!disabled && {
       tabIndex: 0,
-      role: "button"
+      role: "button",
     }),
     ...(disabled && {
       disabled: true,
-      "aria-disabled": true
-    })
+      "aria-disabled": true,
+    }),
   };
 };
 
@@ -46,12 +47,12 @@ export const ToggleBase = (props: IToggleProps) => {
     <Root
       aria-checked="true"
       role="checkbox"
-      {...!state.disabled && {
+      {...(!state.disabled && {
         tabIndex: 0,
-        "data-is-focusable": true
-      }}
+        "data-is-focusable": true,
+      })}
       onClick={state.onClick}
-      className={cx(classes.root, state, classes, ToggleVariants)}
+      className={cx(classes.root, state, classes, ToggleVariants as any)}
     >
       <span className={classes.pill}>
         <span className={classes.thumb} />
@@ -65,7 +66,7 @@ export const ToggleBase = (props: IToggleProps) => {
 const ToggleVariants = [
   { disabled: "disabled-fill" },
   { checked: "checked" },
-  (state: IToggleProps) => (state.checked ? "accent-fill" : "")
+  (state: IToggleProps) => (state.checked ? "accent-fill" : ""),
 ];
 
 export const Toggle = (props: IToggleProps) =>
@@ -73,7 +74,7 @@ export const Toggle = (props: IToggleProps) =>
 
 export const ToggleExample = () => (
   <div className="SampleCard">
-    <Toggle funky label="I am a toggle" />
+    <Toggle label="I am a toggle" />
     <Toggle defaultChecked label="I am a checked toggle" />
     <Toggle disabled label="I am a disabled toggle" />
     <Toggle disabled defaultChecked label="I am a disabled checked toggle" />

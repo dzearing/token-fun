@@ -3,7 +3,7 @@ import { default as defaultClasses } from "./Checkbox.module.scss";
 import cx from "../utilities/cx";
 import { useControlled } from "../hooks/useControlled";
 import { useEventCallback } from "../hooks/useEventCallback";
-import { CheckMarkIcon } from "../icons/index";
+import { CheckMarkIcon } from "../icons/IconSet";
 
 export interface ICheckboxProps extends React.AllHTMLAttributes<any> {
   as?: string;
@@ -14,13 +14,14 @@ export interface ICheckboxProps extends React.AllHTMLAttributes<any> {
   label?: string;
 }
 
-export const useCheckbox = (props: ICheckboxProps): ICheckboxProps => {
+export interface ICheckboxState extends ICheckboxProps {
+  setChecked: (checked: boolean) => void;
+}
+
+export const useCheckbox = (props: ICheckboxProps): ICheckboxState => {
   const { disabled, onClick, ...rest } = props;
   const [checked, setChecked] = useControlled(props, "checked");
-  const onToggleClick = useEventCallback(onClick, () => setChecked(!checked), [
-    checked,
-    setChecked
-  ]);
+  const onToggleClick = useEventCallback(onClick, () => setChecked(!checked));
 
   return {
     ...rest,
@@ -29,12 +30,12 @@ export const useCheckbox = (props: ICheckboxProps): ICheckboxProps => {
     onClick: onToggleClick,
     ...(!disabled && {
       tabIndex: 0,
-      role: "button"
+      role: "button",
     }),
     ...(disabled && {
       disabled: true,
-      "aria-disabled": true
-    })
+      "aria-disabled": true,
+    }),
   };
 };
 
@@ -47,10 +48,10 @@ export const CheckboxBase = (props: ICheckboxProps) => {
     <Root
       aria-checked="true"
       role="checkbox"
-      {...!state.disabled && {
+      {...(!state.disabled && {
         tabIndex: 0,
-        "data-is-focusable": true
-      }}
+        "data-is-focusable": true,
+      })}
       onClick={state.onClick}
       className={cx(classes.root, state, classes, variants)}
     >
@@ -65,14 +66,14 @@ export const CheckboxBase = (props: ICheckboxProps) => {
 
 const CheckboxVariants = [
   { disabled: "disabled-fill" },
-  { checked: "accent-fill" }
+  { checked: "accent-fill" },
 ];
 
 export const Checkbox = (props: ICheckboxProps) =>
   CheckboxBase({
     ...props,
     variants: CheckboxVariants,
-    classes: defaultClasses
+    classes: defaultClasses,
   });
 
 export const CheckboxExample = () => (
