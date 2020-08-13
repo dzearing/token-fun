@@ -1,0 +1,21 @@
+:root {
+  --noop: auto;
+}
+
+.root {
+  outline: var(--noop);
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.message {
+ display: var(--noop);
+ background: var(--ms-background);
+}
+
+.isChecked .message {
+  --ms-background: red;
+}
